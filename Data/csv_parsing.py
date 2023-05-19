@@ -11,6 +11,6 @@ data = data[data["Count"] == "5"]
 data = data[data["Word"].str.contains(' ') == False]
 data.reset_index(inplace=True)
 data.drop({"Count","index"},inplace=True,axis=1)
-
+data["Word"] = data["Word"].str.lower()
 
 data.to_csv("Data/dictionnary.txt",index=False,header=False)
